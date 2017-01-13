@@ -51,7 +51,7 @@ public class PlayActivity extends AppCompatActivity {
 
         aboutAnswer(0);
 
-        checkTime();
+        //checkTime();
 
     }   // Main Method
 
