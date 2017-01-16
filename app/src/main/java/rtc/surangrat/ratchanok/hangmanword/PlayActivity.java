@@ -185,6 +185,10 @@ public class PlayActivity extends AppCompatActivity {
                 answerString = answerTextView.getText().toString().trim();
                 Log.d(tag[1], "digi ที่ ==> " + answerString.length());
 
+                if (answerString.length() == wordAnInt) {
+                    Log.d(tag[1], "คำตอบที่ user กรอก ==> " + answerString);
+                }
+
                 checkTrueFalseDigi(answerString.length(), keyboardStrings[i]);
 
                 checkWord();
@@ -201,9 +205,9 @@ public class PlayActivity extends AppCompatActivity {
         Log.d(tag[2], "sepAns ==>" + sepAnserStrings[index]);
 
         if (!digiKeyboard.equals(sepAnserStrings[index])) {
-            falseAnInt += 1;
+           // falseAnInt += 1;
             Log.d(tag[2], "falseAnInt ==> " + falseAnInt);
-            changeImage(falseAnInt);
+           // changeImage(falseAnInt);
         }
 
     }
@@ -225,6 +229,11 @@ public class PlayActivity extends AppCompatActivity {
                     if (answerString.equals(answerTrueStrings[indexTimes - 1])) {
                         scoreAnInt += 1;
                         scoreTextView.setText("Score = " + scoreAnInt);
+                        Log.d("16janV1", "ตอบถูก");
+                    } else {
+                        Log.d("16janV1", "ตอบผิด");
+                        falseAnInt += 1;
+                        changeImage(falseAnInt);
                     }
 
                     clearText();
