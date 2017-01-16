@@ -127,7 +127,7 @@ public class PlayActivity extends AppCompatActivity {
 
 
         sepAnserStrings = answerTrueStrings[indexTimes].split("");
-        for (int i=0;i<sepAnserStrings.length;i++) {
+        for (int i = 0; i < sepAnserStrings.length; i++) {
             Log.d(tag[1], "sepAns(" + i + ") ==> " + sepAnserStrings[i]);
         }
 
@@ -205,9 +205,9 @@ public class PlayActivity extends AppCompatActivity {
         Log.d(tag[2], "sepAns ==>" + sepAnserStrings[index]);
 
         if (!digiKeyboard.equals(sepAnserStrings[index])) {
-           // falseAnInt += 1;
+            // falseAnInt += 1;
             Log.d(tag[2], "falseAnInt ==> " + falseAnInt);
-           // changeImage(falseAnInt);
+            // changeImage(falseAnInt);
         }
 
     }
