@@ -84,7 +84,10 @@ public class PlayActivity extends AppCompatActivity {
         builder.setCancelable(false);
         builder.setIcon(R.drawable.logosssssssss1);
         builder.setTitle("Game Over");
-        builder.setMessage("Please Try Again");
+        builder.setMessage("Your Score ==> "
+                + Integer.toString(scoreAnInt)
+                + "\n"
+                + "Please Try Again");
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
