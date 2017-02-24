@@ -51,7 +51,7 @@ public class PlayActivity extends AppCompatActivity {
 
         aboutAnswer(0);
 
-        checkTime();
+        //checkTime();
 
     }   // Main Method
 
@@ -84,7 +84,10 @@ public class PlayActivity extends AppCompatActivity {
         builder.setCancelable(false);
         builder.setIcon(R.drawable.logosssssssss1);
         builder.setTitle("Game Over");
-        builder.setMessage("Please Try Again");
+        builder.setMessage("Your Score ==> "
+                + Integer.toString(scoreAnInt)
+                + "\n"
+                + "Please Try Again");
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
@@ -127,7 +130,7 @@ public class PlayActivity extends AppCompatActivity {
 
 
         sepAnserStrings = answerTrueStrings[indexTimes].split("");
-        for (int i=0;i<sepAnserStrings.length;i++) {
+        for (int i = 0; i < sepAnserStrings.length; i++) {
             Log.d(tag[1], "sepAns(" + i + ") ==> " + sepAnserStrings[i]);
         }
 
@@ -185,6 +188,10 @@ public class PlayActivity extends AppCompatActivity {
                 answerString = answerTextView.getText().toString().trim();
                 Log.d(tag[1], "digi ที่ ==> " + answerString.length());
 
+                if (answerString.length() == wordAnInt) {
+                    Log.d(tag[1], "คำตอบที่ user กรอก ==> " + answerString);
+                }
+
                 checkTrueFalseDigi(answerString.length(), keyboardStrings[i]);
 
                 checkWord();
@@ -201,9 +208,9 @@ public class PlayActivity extends AppCompatActivity {
         Log.d(tag[2], "sepAns ==>" + sepAnserStrings[index]);
 
         if (!digiKeyboard.equals(sepAnserStrings[index])) {
-            falseAnInt += 1;
+            // falseAnInt += 1;
             Log.d(tag[2], "falseAnInt ==> " + falseAnInt);
-            changeImage(falseAnInt);
+            // changeImage(falseAnInt);
         }
 
     }
@@ -225,6 +232,11 @@ public class PlayActivity extends AppCompatActivity {
                     if (answerString.equals(answerTrueStrings[indexTimes - 1])) {
                         scoreAnInt += 1;
                         scoreTextView.setText("Score = " + scoreAnInt);
+                        Log.d("16janV1", "ตอบถูก");
+                    } else {
+                        Log.d("16janV1", "ตอบผิด");
+                        falseAnInt += 1;
+                        changeImage(falseAnInt);
                     }
 
                     clearText();
